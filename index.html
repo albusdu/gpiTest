@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>gpi</title>
+ <link rel="stylesheet" href="//cdn.web-fonts.ge/fonts/bpg-ingiri-arial/css/bpg-ingiri-arial.min.css">
+ <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="./assets/styles/scss/style.css">
+</head>
+<body>
+  <svg style="display: none;">
+   <symbol xmlns="http://www.w3.org/2000/svg" id="close" viewBox="0 0 25 25">
+     <g id="cancel_2_" data-name="cancel (2)" transform="translate(-0.001)">
+       <g id="Group_74" data-name="Group 74" transform="translate(0.001)">
+         <path id="Path_63" data-name="Path 63" d="M12.5,0A12.5,12.5,0,1,0,25,12.5,12.5,12.5,0,0,0,12.5,0Zm4.715,17.264a1.277,1.277,0,0,1-1.806,0L12.566,14.42,9.592,17.394a1.277,1.277,0,0,1-1.806-1.807l2.974-2.974L7.991,9.845A1.277,1.277,0,0,1,9.8,8.038l2.768,2.768L15.2,8.168a1.277,1.277,0,1,1,1.806,1.806l-2.639,2.639,2.844,2.844A1.277,1.277,0,0,1,17.216,17.264Z" transform="translate(-0.001)" fill="#9199b4"/>
+       </g>
+     </g>
+   </symbol>
+  </svg>
+  <header class="header">
+   <div class="header_inner">
+    <div class="logo">
+     <picture>
+      <source srcset="./assets/imgs/logo.webp" type="image/webp">
+      <source srcset="./assets/imgs/logo.svg" type="image/svg">
+      <img src="assets/img/games/5star-slider-banner.webp" alt="gpi logo" class="logo_img">
+     </picture>
+    </div>
+    <div class="right">
+     <div class="hot-line">
+      <span class="text-sm">ცხელი ხაზი</span>
+      <span class="text-lg pink">032 2 505 111</span>
+     </div>
+     <div class="profile btn btn-pink">ჩემი კაბინეტი</div>
+    </div>
+   </div>
+  </header>
+  <main class="main">
+   <aside class="policy">
+    <div class="policy_title">
+     <div class="number">1</div>
+     პოლისის არჩევა
+    </div>
+    <nav class="dotted-nav">
+     <li class="dotted-nav_item">
+      <a href="#!" class="dotted-nav_item_link">აირჩიეთ პაკეტი</a>
+     </li>
+     <li class="dotted-nav_item">
+      <a href="#!" class="dotted-nav_item_link">სამოგზაურო პერიოდი</a>
+     </li>
+     <li class="dotted-nav_item active">
+      <a href="#!" class="dotted-nav_item_link">გამგზავრების მიმართულება</a>
+     </li>
+    </nav>
+   </aside>
+   <article class="content">
+    <div class="content_inner">
+     <h1 class="slogan">
+      <span class="pink">პოლისი სამოგზაურო</span>
+      <span class="blue">სად მიემგზავრები?</span>
+     </h1>
+     <section class="choose-direction">
+      <label class="radio-container active">
+       <input type="radio" checked="checked" name="radio">
+       <span class="checkmark"></span>
+       ევროპა და სხვა ქვეყნები
+      </label>
+      <label class="radio-container">
+       <input type="radio" name="radio">
+       <span class="checkmark"></span>
+       მთელი მსოფლიო
+      </label>
+     </section>
+     <section class="choose-valute">
+       <h3 class="choose-valute_title">აირჩიე ანაზღაურების ვალუტა</h3>
+       <div class="switch">
+         <div class="active-square"></div>
+         <div class="switch_item active" data-key="1">
+          €
+         </div>
+         <div class="switch_item" data-key="2">
+          $
+         </div>
+       </div>
+     </section>
+     <section class="offers">
+      <label class="radio-container xl">
+        <input type="checkbox" name="radio1">
+        <span class="checkmark"></span>
+        <div class="text">
+          <h3 class="text-lg">შეამცირე ფრანშიზა <span>80€-მდე</span></h3>
+          <h4 class="text-md">სტანდარტულ პაკეტში ფრანშიზა 150 ევროა</h4>
+        </div>
+      </label>
+     </section>
+     <section class="actions">
+       <button class="btn btn-white">ჯერ შევადარებ</button>
+       <button class="btn btn-pink">შემდეგ</button>
+     </section>
+    </div>
+   </article>
+   <aside class="info">
+    <div class="close"><svg class='icon'><use xlink:href="#close"></use></svg></div>
+    <div class="info_text">
+     <h4 class="info_text_title">ევროპა და სხვა ქვეყნები:</h4>
+     <p class="info_text_p">ევროპის ქვეყნები, რუსეთი, აზერბაიჯანი, სომხეთი, თურქეთი, ყაზახეთი, ტაჯიკეთი, ყირგიზეთი, თურქმენეთი, უზბეკეთი</p>
+    </div>
+   </aside>
+  </main>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

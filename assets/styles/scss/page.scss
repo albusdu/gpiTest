@@ -1,0 +1,318 @@
+%dotted-nav{
+ .dotted-nav{
+  @include flexContainer(column,flex-start,flex-start);
+  @include margin(26.5px,0,0,14px);
+  &_item{
+   @include flexContainer(row,flex-start,center);
+   @include padding(0,0,0,22px);
+   @include margin(0,0,18px,0);
+   position: relative;
+   &:last-of-type{
+    margin-bottom: 0;
+   }
+   &.active{
+    .dotted-nav_item_link{
+     color: $blue-tone2;
+     &:before{
+      background: $yellow;
+     }
+    }
+   }
+   &_link{
+    @include flexbox;
+    @include align-items(center);
+    color: $gray;
+    text-decoration: none;
+    font-weight: $semiBold;
+    font-size: 14px;
+    &:before{
+     content: '';
+     @include border-radius(50%);
+     position: absolute;
+     width: 10px;
+     height: 10px;
+     left: 0;
+     background: $gray-tone1;
+    }
+   }
+  }
+ }
+}
+%radio-container{
+ .radio-container {
+  display: block;
+  position: relative;
+  width: 100%;
+  @include padding(19px,19px,18px,60px);
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: $medium;
+  @include user-select(none);
+  @include border(all,1px,solid,rgba(145,153,180,.3));
+  @include border-radius(8px);
+  @include transition(border-color,.35s,ease-in-out);
+  &.xl{
+   @include padding(31px,19px,31px,85px);
+   .checkmark{
+    left: 32px;
+    border-radius: 5px;
+   }
+  }
+  &:last-of-type{
+   margin-bottom: 0;
+  }
+  &.active{
+   @include border-radius(5px);
+   border-color: $blue-tone1;
+  }
+  &:hover{
+   input ~ .checkmark {
+    background-color: $pink-tone-1;
+    border-color: $pink;
+   }
+  }
+  input {
+   position: absolute;
+   opacity: 0;
+   cursor: pointer;
+   @include transition(background-color,.35s,ease-in-out);
+   &:checked ~ .checkmark {
+    background: $pink-tone-1;
+    border-color: $pink;
+    &:after{
+     display: block;
+    }
+   }
+  }
+  .checkmark {
+   @include vertical-center(absolute);
+   left: 19px;
+   height: 24px;
+   width: 24px;
+   background-color: $transparent;
+   border: 1px solid rgba(14,33,94,.19);
+   @include border-radius(50%);
+   @include transition(background-color,.35s,ease-in-out);
+   &:after {
+    content: "";
+    display: none;
+    @include abs-center();
+    background-image: url('./../../imgs/check-mark.png');
+    width: 9.97px;
+    height: 7.43px;
+   }
+  }
+  .text-lg{
+   font-size: 20px;
+   line-height: 1.1em;
+   font-weight: $bold;
+   color: $blue-tone1;
+   span{
+    color: $pink-tone-1;
+   }
+  }
+  .text-md{
+   margin-top: 6px;
+   color: $gray-tone-3;
+   font-size: 14px;
+   line-height: 1.3em;
+  }
+ }
+}
+%switch{
+ .switch{
+  @include flexContainer(row,flex-start,center);
+  @include border(all,1px,solid,rgba(145,153,180,.3));
+  @include border-radius(8px);
+  @include padding(5px,5px,5px,5px);
+  position: relative;
+  .active-square{
+   position: absolute;
+   top: 5px;
+   left: 5px;
+   width: 45px;
+   height: 45px;
+   background: $pink-tone-1;
+   @include border-radius(5px);
+   @include transition(left,.35s,ease-in-out);
+   z-index: -1;
+   &.right{
+    left: 50px;
+   }
+  }
+  &_item{
+   @include flexContainer(row,center,center);
+   width: 45px;
+   height: 45px;
+   font-family: 'Roboto', sans-serif;
+   font-size: 20px;
+   font-weight: $bold;
+   color: #0E215E;
+   cursor: pointer;
+   @include transition(color,.35s,ease-in-out);
+   transition-delay: .15s;
+   &.active{
+    color: $white;
+    pointer-events: none;
+   }
+  }
+ }
+}
+.main{
+ @include flexContainer(row,baseline,flex-start);
+ @include padding(0,37px,0,37px);
+ width: 100%;
+ flex: 1 0 0;
+ min-height: 800px;
+ .policy{
+  @include flexContainer(column,flex-start,flex-start);
+  @include margin(83.5px,0,0,0);
+  @include padding(25px,23px,64px,23px);
+  @include border(all,1px,solid,rgba(145,153,180,.7));
+  @include border-radius(8px);
+  width: 288px;
+  @include mq('desktop-wide') {
+   width: 260px;
+   @include padding(20px,18px,40px,18px);
+  }
+  &_title{
+   @include flexContainer(row,flex-start,center);
+   @include padding(0,0,20px,0);
+   @include border(bottom,1px,solid,$borderColor);
+   width: 100%;
+   font-weight: $bold;
+   .number{
+    @include flexContainer(row,center,center);
+    @include border-radius(50%);
+    @include margin(0,12px,0,0);
+    width: 30px;
+    height: 30px;
+    background: $yellow;
+    font-size: 18px;
+    color: $blue-tone1;
+   }
+  }
+  @extend %dotted-nav;
+ }
+ .content{
+  @include flexContainer(column,flex-start,flex-start);
+  flex: 1 0;
+  height: 100%;
+  &_inner{
+   @include flexContainer(column,flex-start,center);
+   @include padding(29.5px,0,0,0);
+   flex: 1 0;
+   max-width: 672px;
+   width: 100%;
+   margin: 0 auto;
+   @include mq('desktop-wide') {
+    max-width: 550px;
+    @include padding(23.5px,0,0,0);
+   }
+   .slogan{
+    @include flexContainer(column,flex-start,center);
+    font-weight: $bold;
+    .pink{
+     font-size: 34px;
+     line-height: 1.2em;
+     color: $pink;
+    }
+    .blue{
+     font-size: 55px;
+     line-height: 1.2em;
+     color: $blue-tone1;
+    }
+   }
+   .choose-direction{
+    @include flexContainer(column,flex-start,center);
+    @include margin(56px,0,0,0);
+    width: 482px;
+    @extend %radio-container;
+    @include mq('desktop-wide') {
+     max-width: 400px;
+     @include margin(36px,0,0,0);
+    }
+   }
+   .choose-valute{
+    @include flexContainer(row,space-between,center);
+    @include margin(52.5px,0,0,0);
+    @include padding(22.5px,0,22.5px,0);
+    @include border(top,1px,solid,rgba(145,153,180,.3));
+    @include border(bottom,1px,solid,rgba(145,153,180,.3));
+    width: 100%;
+    @extend %switch;
+    @include mq('desktop-wide') {
+     @include margin(37px,0,0,0);
+    }
+   }
+   .offers{
+    @include margin(32.5px,0,0,0);
+    width: 100%;
+    @extend %radio-container;
+    @include mq('desktop-wide') {
+     @include margin(26px,0,0,0);
+    }
+   }
+   .actions{
+    @include margin(0,0,69px,0);
+    @include flexContainer(row,space-between,flex-end);
+    flex: 1 0 0;
+    width: 100%;
+    @include mq('desktop-wide') {
+     @include margin(0,0,50px,0);
+    }
+    .btn{
+     font-weight: $bold;
+     &:first-of-type{
+      @include padding(14px,31px,15px,31px);
+     }
+     &:last-of-type{
+      @include padding(14px,50px,15px,50px);
+     }
+    }
+   }
+  }
+ }
+ .info{
+  @include padding(26px,31px,22px,25px);
+  @include border-radius(11px);
+  @include margin(83.5px,0,0,0);
+  position: relative;
+  background: $gray-tone2;
+  width: 296px;
+  @include mq('desktop-wide') {
+   width: 270px;
+  }
+  &:before{
+   content: '';
+   @include css-triangle($gray-tone2, left, $size: 17px);
+   left: 10px;
+   top: 15px;
+  }
+  .close{
+   position: absolute;
+   top: 26px;
+   right: 24px;
+   cursor: pointer;
+   .icon{
+    width: 25px;
+    height: 25px;
+   }
+  }
+  .info_text{
+   @include flexbox;
+   @include flex-direction(column);
+   line-height: 1.3em;
+   font-size: 14px;
+   &_title{
+    color: $blue-tone2;
+    font-weight: $bold;
+   }
+   &_p{
+    color: rgba(23,30,74,.65);
+    font-weight: $semiBold;
+   }
+  }
+ }
+}

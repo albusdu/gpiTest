@@ -1,0 +1,46 @@
+%text {
+ .text{
+  &-sm{
+   font-size: 12px;
+   line-height: 1.333em;
+   color: $blue;
+   padding-left: 6px;
+  }
+  &-lg{
+   font-size: 24px;
+   line-height: 1.333em;
+   &.pink{
+    color: $pink;
+   }
+  }
+ }
+}
+.header{
+ @include flexbox;
+ @include padding(0,37px,0,37px);
+ width: 100%;
+ position: relative;
+ &_inner{
+  @include flexContainer(row,space-between,center);
+  @include padding(21px,0,21px,0);
+  flex: 1 0 0;
+  border-bottom: 1px solid $borderColor;
+ }
+ .logo{
+  @include flexbox;
+  &_img{
+   width: 159.5px;
+  }
+ }
+ .right{
+  @include flexContainer(row,baseline,center);
+  .profile{
+   @include padding(14px,26px,15px,26px);
+   @include margin(0,0,0,38px);
+  }
+  .hot-line{
+   @include flexContainer(column,baseline,flex-start);
+   @extend %text;
+  }
+ }
+}
